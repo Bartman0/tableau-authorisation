@@ -1,0 +1,678 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0611.2007                               -->
+<datasource formatted-name='federated.0sb1soo1d22b2t15pq8b30c828fx' inline='true' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelRelationshipPerfOptions.true...ObjectModelRelationshipPerfOptions />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+  </document-format-change-manifest>
+  <connection class='federated'>
+    <named-connections>
+      <named-connection caption='localhost' name='postgres.0at9o270tu9kzb1651k060iloh69'>
+        <connection authentication='username-password' class='postgres' dbname='tpch' one-time-sql='insert into metadata.event_log values (CURRENT_TIMESTAMP, &apos;INFO&apos;, &apos;user: &apos; || [TableauServerUser]);' port='5432' server='localhost' username='richardkooijman' />
+      </named-connection>
+    </named-connections>
+    <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='customer_masked' table='[public].[customer_masked]' type='table' />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+      <relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='lineitem' table='[public].[lineitem]' type='table' />
+      <relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='orders' table='[public].[orders]' type='table' />
+      <relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='customer_masked' table='[public].[customer_masked]' type='table' />
+    </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+    <cols>
+      <map key='[c_acctbal]' value='[customer_masked].[c_acctbal]' />
+      <map key='[c_address]' value='[customer_masked].[c_address]' />
+      <map key='[c_comment]' value='[customer_masked].[c_comment]' />
+      <map key='[c_custkey]' value='[customer_masked].[c_custkey]' />
+      <map key='[c_mktsegment]' value='[customer_masked].[c_mktsegment]' />
+      <map key='[c_name]' value='[customer_masked].[c_name]' />
+      <map key='[c_nationkey]' value='[customer_masked].[c_nationkey]' />
+      <map key='[c_phone]' value='[customer_masked].[c_phone]' />
+      <map key='[groups (lineitem)]' value='[lineitem].[groups]' />
+      <map key='[groups]' value='[customer_masked].[groups]' />
+      <map key='[l_comment (lineitem)]' value='[lineitem].[l_comment]' />
+      <map key='[l_commitdate (lineitem)]' value='[lineitem].[l_commitdate]' />
+      <map key='[l_discount (lineitem)]' value='[lineitem].[l_discount]' />
+      <map key='[l_extendedprice (lineitem)]' value='[lineitem].[l_extendedprice]' />
+      <map key='[l_linenumber (lineitem)]' value='[lineitem].[l_linenumber]' />
+      <map key='[l_linestatus (lineitem)]' value='[lineitem].[l_linestatus]' />
+      <map key='[l_orderkey (lineitem)]' value='[lineitem].[l_orderkey]' />
+      <map key='[l_partkey (lineitem)]' value='[lineitem].[l_partkey]' />
+      <map key='[l_quantity (lineitem)]' value='[lineitem].[l_quantity]' />
+      <map key='[l_receiptdate (lineitem)]' value='[lineitem].[l_receiptdate]' />
+      <map key='[l_returnflag (lineitem)]' value='[lineitem].[l_returnflag]' />
+      <map key='[l_shipdate (lineitem)]' value='[lineitem].[l_shipdate]' />
+      <map key='[l_shipinstruct (lineitem)]' value='[lineitem].[l_shipinstruct]' />
+      <map key='[l_shipmode (lineitem)]' value='[lineitem].[l_shipmode]' />
+      <map key='[l_suppkey (lineitem)]' value='[lineitem].[l_suppkey]' />
+      <map key='[l_tax (lineitem)]' value='[lineitem].[l_tax]' />
+      <map key='[o_clerk]' value='[orders].[o_clerk]' />
+      <map key='[o_comment]' value='[orders].[o_comment]' />
+      <map key='[o_custkey]' value='[orders].[o_custkey]' />
+      <map key='[o_orderdate]' value='[orders].[o_orderdate]' />
+      <map key='[o_orderkey]' value='[orders].[o_orderkey]' />
+      <map key='[o_orderpriority]' value='[orders].[o_orderpriority]' />
+      <map key='[o_orderstatus]' value='[orders].[o_orderstatus]' />
+      <map key='[o_shippriority]' value='[orders].[o_shippriority]' />
+      <map key='[o_totalprice]' value='[orders].[o_totalprice]' />
+      <map key='[user_id]' value='[customer_masked].[user_id]' />
+    </cols>
+    <metadata-records>
+      <metadata-record class='column'>
+        <remote-name>l_orderkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[l_orderkey (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_orderkey</remote-alias>
+        <ordinal>1</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_partkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[l_partkey (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_partkey</remote-alias>
+        <ordinal>2</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_suppkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[l_suppkey (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_suppkey</remote-alias>
+        <ordinal>3</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_linenumber</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[l_linenumber (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_linenumber</remote-alias>
+        <ordinal>4</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_quantity</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[l_quantity (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_quantity</remote-alias>
+        <ordinal>5</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>15</precision>
+        <scale>2</scale>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_extendedprice</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[l_extendedprice (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_extendedprice</remote-alias>
+        <ordinal>6</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>15</precision>
+        <scale>2</scale>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_discount</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[l_discount (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_discount</remote-alias>
+        <ordinal>7</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>15</precision>
+        <scale>2</scale>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_tax</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[l_tax (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_tax</remote-alias>
+        <ordinal>8</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>15</precision>
+        <scale>2</scale>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_returnflag</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[l_returnflag (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_returnflag</remote-alias>
+        <ordinal>9</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>1</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_linestatus</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[l_linestatus (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_linestatus</remote-alias>
+        <ordinal>10</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>1</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_shipdate</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[l_shipdate (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_shipdate</remote-alias>
+        <ordinal>11</ordinal>
+        <local-type>date</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_commitdate</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[l_commitdate (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_commitdate</remote-alias>
+        <ordinal>12</ordinal>
+        <local-type>date</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_receiptdate</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[l_receiptdate (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_receiptdate</remote-alias>
+        <ordinal>13</ordinal>
+        <local-type>date</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_shipinstruct</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[l_shipinstruct (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_shipinstruct</remote-alias>
+        <ordinal>14</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>25</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_shipmode</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[l_shipmode (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_shipmode</remote-alias>
+        <ordinal>15</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>10</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>l_comment</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[l_comment (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>l_comment</remote-alias>
+        <ordinal>16</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>44</width>
+        <contains-null>false</contains-null>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>groups</remote-name>
+        <remote-type>1</remote-type>
+        <local-name>[groups (lineitem)]</local-name>
+        <parent-name>[lineitem]</parent-name>
+        <remote-alias>groups</remote-alias>
+        <ordinal>17</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>10</width>
+        <contains-null>true</contains-null>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[lineitem_E00E2C10DD8542B993D48755F4708709]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_orderkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[o_orderkey]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_orderkey</remote-alias>
+        <ordinal>19</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_custkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[o_custkey]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_custkey</remote-alias>
+        <ordinal>20</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_orderstatus</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[o_orderstatus]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_orderstatus</remote-alias>
+        <ordinal>21</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>1</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_totalprice</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[o_totalprice]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_totalprice</remote-alias>
+        <ordinal>22</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>15</precision>
+        <scale>2</scale>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_orderdate</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[o_orderdate]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_orderdate</remote-alias>
+        <ordinal>23</ordinal>
+        <local-type>date</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_orderpriority</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[o_orderpriority]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_orderpriority</remote-alias>
+        <ordinal>24</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>15</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_clerk</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[o_clerk]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_clerk</remote-alias>
+        <ordinal>25</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>15</width>
+        <contains-null>false</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_shippriority</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[o_shippriority]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_shippriority</remote-alias>
+        <ordinal>26</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>false</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>o_comment</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[o_comment]</local-name>
+        <parent-name>[orders]</parent-name>
+        <remote-alias>o_comment</remote-alias>
+        <ordinal>27</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>79</width>
+        <contains-null>false</contains-null>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[orders_97D9EBD386E84DB2B376696157D79080]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_custkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[c_custkey]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_custkey</remote-alias>
+        <ordinal>29</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_name</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[c_name]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_name</remote-alias>
+        <ordinal>30</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_address</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[c_address]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_address</remote-alias>
+        <ordinal>31</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_nationkey</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[c_nationkey]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_nationkey</remote-alias>
+        <ordinal>32</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_phone</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[c_phone]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_phone</remote-alias>
+        <ordinal>33</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_acctbal</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[c_acctbal]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_acctbal</remote-alias>
+        <ordinal>34</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>15</precision>
+        <scale>2</scale>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_mktsegment</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[c_mktsegment]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_mktsegment</remote-alias>
+        <ordinal>35</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>10</width>
+        <contains-null>true</contains-null>
+        <padded-semantics>true</padded-semantics>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>c_comment</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[c_comment]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>c_comment</remote-alias>
+        <ordinal>36</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>groups</remote-name>
+        <remote-type>1</remote-type>
+        <local-name>[groups]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>groups</remote-alias>
+        <ordinal>37</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>10</width>
+        <contains-null>true</contains-null>
+        <collation flag='0' name='binary' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>user_id</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[user_id]</local-name>
+        <parent-name>[customer_masked]</parent-name>
+        <remote-alias>user_id</remote-alias>
+        <ordinal>38</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+    </metadata-records>
+  </connection>
+  <aliases enabled='yes' />
+  <column caption='Filter on user_id' datatype='boolean' name='[Calculation_2832482740735492116]' role='dimension' type='nominal'>
+    <calculation class='tableau' formula='[user_id]=[Parameters].[Parameter 1]' />
+  </column>
+  <_.fcp.ObjectModelTableType.true...column caption='customer_masked' datatype='table' name='[__tableau_internal_object_id__].[customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='lineitem1' datatype='table' name='[__tableau_internal_object_id__].[lineitem_E00E2C10DD8542B993D48755F4708709]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='orders' datatype='table' name='[__tableau_internal_object_id__].[orders_97D9EBD386E84DB2B376696157D79080]' role='measure' type='quantitative' />
+  <column caption='C Acctbal' datatype='real' name='[c_acctbal]' role='measure' type='quantitative' />
+  <column caption='C Address' datatype='string' name='[c_address]' role='dimension' type='nominal' />
+  <column caption='C Comment' datatype='string' name='[c_comment]' role='dimension' type='nominal' />
+  <column caption='C Custkey' datatype='integer' name='[c_custkey]' role='measure' type='quantitative' />
+  <column caption='C Mktsegment' datatype='string' name='[c_mktsegment]' role='dimension' type='nominal' />
+  <column caption='C Name' datatype='string' name='[c_name]' role='dimension' type='nominal' />
+  <column caption='C Nationkey' datatype='integer' name='[c_nationkey]' role='measure' type='quantitative' />
+  <column caption='C Phone' datatype='string' name='[c_phone]' role='dimension' type='nominal' />
+  <column caption='Groups (Lineitem)' datatype='string' name='[groups (lineitem)]' role='dimension' type='nominal' />
+  <column caption='Groups' datatype='string' name='[groups]' role='dimension' type='nominal' />
+  <column caption='L Comment (Lineitem)' datatype='string' name='[l_comment (lineitem)]' role='dimension' type='nominal' />
+  <column caption='L Commitdate (Lineitem)' datatype='date' name='[l_commitdate (lineitem)]' role='dimension' type='ordinal' />
+  <column caption='L Discount (Lineitem)' datatype='real' name='[l_discount (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Extendedprice (Lineitem)' datatype='real' name='[l_extendedprice (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Linenumber (Lineitem)' datatype='integer' name='[l_linenumber (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Linestatus (Lineitem)' datatype='string' name='[l_linestatus (lineitem)]' role='dimension' type='nominal' />
+  <column caption='L Orderkey (Lineitem)' datatype='integer' name='[l_orderkey (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Partkey (Lineitem)' datatype='integer' name='[l_partkey (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Quantity (Lineitem)' datatype='real' name='[l_quantity (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Receiptdate (Lineitem)' datatype='date' name='[l_receiptdate (lineitem)]' role='dimension' type='ordinal' />
+  <column caption='L Returnflag (Lineitem)' datatype='string' name='[l_returnflag (lineitem)]' role='dimension' type='nominal' />
+  <column caption='L Shipdate (Lineitem)' datatype='date' name='[l_shipdate (lineitem)]' role='dimension' type='ordinal' />
+  <column caption='L Shipinstruct (Lineitem)' datatype='string' name='[l_shipinstruct (lineitem)]' role='dimension' type='nominal' />
+  <column caption='L Shipmode (Lineitem)' datatype='string' name='[l_shipmode (lineitem)]' role='dimension' type='nominal' />
+  <column caption='L Suppkey (Lineitem)' datatype='integer' name='[l_suppkey (lineitem)]' role='measure' type='quantitative' />
+  <column caption='L Tax (Lineitem)' datatype='real' name='[l_tax (lineitem)]' role='measure' type='quantitative' />
+  <column caption='O Clerk' datatype='string' name='[o_clerk]' role='dimension' type='nominal' />
+  <column caption='O Comment' datatype='string' name='[o_comment]' role='dimension' type='nominal' />
+  <column caption='O Custkey' datatype='integer' name='[o_custkey]' role='measure' type='quantitative' />
+  <column caption='O Orderdate' datatype='date' name='[o_orderdate]' role='dimension' type='ordinal' />
+  <column caption='O Orderkey' datatype='integer' name='[o_orderkey]' role='measure' type='quantitative' />
+  <column caption='O Orderpriority' datatype='string' name='[o_orderpriority]' role='dimension' type='nominal' />
+  <column caption='O Orderstatus' datatype='string' name='[o_orderstatus]' role='dimension' type='nominal' />
+  <column caption='O Shippriority' datatype='integer' name='[o_shippriority]' role='measure' type='quantitative' />
+  <column caption='O Totalprice' datatype='real' name='[o_totalprice]' role='measure' type='quantitative' />
+  <column caption='User Id' datatype='string' name='[user_id]' role='dimension' type='nominal' />
+  <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
+  <semantic-values>
+    <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+  </semantic-values>
+  <date-options start-of-week='monday' />
+  <datasource-dependencies datasource='Parameters'>
+    <column caption='user_id' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;william&quot;'>
+      <calculation class='tableau' formula='&quot;william&quot;' />
+      <members>
+        <member value='&quot;ashay&quot;' />
+        <member value='&quot;mohammed&quot;' />
+        <member value='&quot;richard&quot;' />
+        <member value='&quot;william&quot;' />
+      </members>
+    </column>
+  </datasource-dependencies>
+  <filter class='categorical' column='[Calculation_2832482740735492116]' filter-group='2'>
+    <groupfilter function='member' level='[Calculation_2832482740735492116]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+  </filter>
+  <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    <objects>
+      <object caption='customer_masked' id='customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3'>
+        <properties context=''>
+          <relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='customer_masked' table='[public].[customer_masked]' type='table' />
+        </properties>
+      </object>
+      <object caption='lineitem1' id='lineitem_E00E2C10DD8542B993D48755F4708709'>
+        <properties context=''>
+          <relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='lineitem' table='[public].[lineitem]' type='table' />
+        </properties>
+      </object>
+      <object caption='orders' id='orders_97D9EBD386E84DB2B376696157D79080'>
+        <properties context=''>
+          <relation connection='postgres.0at9o270tu9kzb1651k060iloh69' name='orders' table='[public].[orders]' type='table' />
+        </properties>
+      </object>
+    </objects>
+    <relationships>
+      <relationship>
+        <expression op='='>
+          <expression op='[o_custkey]' />
+          <expression op='[c_custkey]' />
+        </expression>
+        <first-end-point object-id='orders_97D9EBD386E84DB2B376696157D79080' />
+        <second-end-point object-id='customer_masked_84C9D930C6F24CC385EBCAD96AC5D8B3' />
+      </relationship>
+      <relationship>
+        <expression op='='>
+          <expression op='[l_orderkey (lineitem)]' />
+          <expression op='[o_orderkey]' />
+        </expression>
+        <first-end-point object-id='lineitem_E00E2C10DD8542B993D48755F4708709' />
+        <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='orders_97D9EBD386E84DB2B376696157D79080' unique-key='true' />
+      </relationship>
+    </relationships>
+  </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+</datasource>
